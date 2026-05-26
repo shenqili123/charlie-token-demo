@@ -1,28 +1,41 @@
 # 查理 Token H5 Demo
 
-这是“查理 Token / AI Learning Gear”的纯静态 H5 demo。页面模拟实体 NFC Token 被扫描后的体验：识别 Token、启动 AI Agent、完成方法训练、点亮能力徽章，并生成成长罗盘。
+"查理 Token / AI Learning Gear"的纯静态 H5 demo。页面模拟实体 NFC Token 被扫描后的完整体验流程：识别 Token → 启动 AI Agent → 完成方法训练 → 点亮能力徽章 → 生成成长罗盘。
+
+## 在线体验
+
+已部署至 Cloudflare，四个 Token 入口：
+
+- [数学 Token](https://charlie-token-demo.shenqili123.workers.dev/?token=math)
+- [语文 Token](https://charlie-token-demo.shenqili123.workers.dev/?token=chinese)
+- [英语 Token](https://charlie-token-demo.shenqili123.workers.dev/?token=english)
+- [能量 Token](https://charlie-token-demo.shenqili123.workers.dev/?token=energy)
 
 ## 本地预览
 
-直接用浏览器打开 `index.html` 即可。四个入口可以用 URL 参数模拟：
+直接用浏览器打开 `index.html` 即可，或使用本地服务器：
 
-- `index.html?token=math`
-- `index.html?token=chinese`
-- `index.html?token=english`
-- `index.html?token=energy`
+```bash
+python -m http.server 5173
+```
+
+然后访问 `http://localhost:5173/?token=math` 等地址。
 
 ## 部署
 
-这是无构建静态站点，可以直接部署到 Vercel、Netlify、Cloudflare Pages 或 GitHub Pages。
+无构建静态站点，已通过 GitHub 连接 Cloudflare 自动部署。推送代码即自动更新：
 
-部署目录选择当前文件夹即可，构建命令留空，发布目录设为项目根目录。
+```bash
+git add .
+git commit -m "描述修改内容"
+git push
+```
 
 ## NFC 写入 URL
 
-部署后可以把四个公网地址写入不同实体 Token：
+将以下公网地址写入不同实体 Token：
 
-- `https://your-domain.example/?token=math`
-- `https://your-domain.example/?token=chinese`
-- `https://your-domain.example/?token=english`
-- `https://your-domain.example/?token=energy`
-
+- 数学 → `https://charlie-token-demo.shenqili123.workers.dev/?token=math`
+- 语文 → `https://charlie-token-demo.shenqili123.workers.dev/?token=chinese`
+- 英语 → `https://charlie-token-demo.shenqili123.workers.dev/?token=english`
+- 能量 → `https://charlie-token-demo.shenqili123.workers.dev/?token=energy`
